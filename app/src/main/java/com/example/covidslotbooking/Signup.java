@@ -45,7 +45,7 @@ public class Signup extends AppCompatActivity {
     TextInputEditText name,currentaddress,peraddress,password,password2,phoneno,pincode;
     AutoCompleteTextView city;
     RadioButton male,female,other;
-    private static final String apiurl = "https://127.0.0.1/phpmyadmin/register.php";
+    private static final String apiurl = "https://192.168.43.181/phpmyadmin/register.php";
     //="https://files.000webhost.com/"
   //  private static final String apiurl ="D:/android_projects/CovidSlotBooking/phpfiles/register.php";
     ArrayList cities_list;

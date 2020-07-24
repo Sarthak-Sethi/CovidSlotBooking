@@ -2,6 +2,7 @@ package com.example.covidslotbooking;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,14 +21,23 @@ import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.security.SecureRandom;
+import java.security.cert.X509Certificate;
 import java.util.regex.Pattern;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 
 public class login extends AppCompatActivity {
 TextInputEditText phonenumber;
 TextInputEditText password;
 TextView signupnewuser;
 Button loginbtn;
-String url = "https://127.0.0.1/phpmyadmin/login.php?phoneno=";
+String url = "https://192.168.43.181/phpmyadmin/login.php?phoneno=";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +47,7 @@ String url = "https://127.0.0.1/phpmyadmin/login.php?phoneno=";
            @Override
            public void onClick(View v) {
                if(checkfields()){
+                   handleSSLHandshake();
                    verifydetailsandlogin();
                }
            }
@@ -48,6 +59,35 @@ String url = "https://127.0.0.1/phpmyadmin/login.php?phoneno=";
                startActivity(i);
            }
        });
+    }
+    @SuppressLint("TrulyRandom")
+    public static void handleSSLHandshake() {
+        try {
+            TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager() {
+                public X509Certificate[] getAcceptedIssuers() {
+                    return new X509Certificate[0];
+                }
+
+                @Override
+                public void checkClientTrusted(X509Certificate[] certs, String authType) {
+                }
+
+                @Override
+                public void checkServerTrusted(X509Certificate[] certs, String authType) {
+                }
+            }};
+
+            SSLContext sc = SSLContext.getInstance("SSL");
+            sc.init(null, trustAllCerts, new SecureRandom());
+            HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
+            HttpsURLConnection.setDefaultHostnameVerifier(new HostnameVerifier() {
+                @Override
+                public boolean verify(String arg0, SSLSession arg1) {
+                    return true;
+                }
+            });
+        } catch (Exception ignored) {
+        }
     }
 
     private void verifydetailsandlogin() {

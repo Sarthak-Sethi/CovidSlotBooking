@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/home"
+        android:title="home"
+        app:cnb_iconColor="@android:color/black"
+        app:cnb_textColor="@android:color/black"
+        android:icon="@drawable/home"/>
+
+    <item
+        android:id="@+id/service"
+        app:cnb_iconColor="@android:color/black"
+        app:cnb_textColor="@android:color/black"
+        android:title="services"
+        android:icon="@drawable/services"/>
+
+    <item
+        android:id="@+id/kit"
+        app:cnb_iconColor="@android:color/black"
+        app:cnb_textColor="@android:color/black"
+        android:title="qurantine kit"
+        android:icon="@drawable/kit"/>
+
+<!--    <item-->
+<!--        android:id="@+id/item4"-->
+<!--        android:title="@string/menu_profile"-->
+<!--        android:icon="@drawable/ic_profile"/>-->
+</menu>
