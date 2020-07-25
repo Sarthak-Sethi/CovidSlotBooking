@@ -22,7 +22,7 @@
             android:id="@+id/animationView2"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            app:lottie_rawRes="@raw/loin"
+            app:lottie_rawRes="@raw/login"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"/>
 
@@ -56,14 +56,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:hintTextColor="@android:color/black"
+                app:hintEnabled="false"
                 app:startIconDrawable="@drawable/phone"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/styling">
+                android:background="@drawable/styling2">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/phoneno"
                     android:layout_width="match_parent"
+                    app:startIconDrawable="@drawable/phone"
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:hint="Enter your number"
@@ -77,10 +79,11 @@
                 android:layout_width="match_parent"
                 app:startIconDrawable="@drawable/password"
                 android:layout_height="wrap_content"
+                app:hintEnabled="false"
                 app:hintTextColor="@android:color/black"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/styling">
+                android:background="@drawable/styling2">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edittxtpassword"

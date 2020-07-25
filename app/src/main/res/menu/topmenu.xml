@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <item android:id="@+id/main"
+            android:title="Main"
+            app:showAsAction="always"
+            android:icon="@drawable/more">
+            <menu>
+
+            <item android:id="@+id/profile"
+                android:title="Profile"
+                android:icon="@drawable/profile"
+                app:showAsAction="never"
+                >
+            </item>
+
+            <item android:id="@+id/aboutus"
+                android:title="About Us"
+                android:icon="@drawable/about"
+                app:showAsAction="never"
+                >
+            </item>
+            <item android:id="@+id/ourservices"
+                android:title="Services"
+                android:icon="@drawable/services"
+                app:showAsAction="never"
+                >
+            </item>
+            <item android:id="@+id/ourproducts"
+                android:title="Our Products"
+                android:icon="@drawable/product"
+                app:showAsAction="never"
+                >
+            </item>
+            <item android:id="@+id/helpcenter"
+                android:title="Need Help"
+                android:icon="@drawable/help"
+                app:showAsAction="never"
+                >
+            </item>
+            <item android:id="@+id/updates"
+                android:title=" Check Updates"
+                android:icon="@drawable/updates"
+                app:showAsAction="never"
+                >
+            </item>
+            <item android:id="@+id/shareapp"
+                android:title="Share our App"
+                android:icon="@drawable/sharepng"
+                app:showAsAction="never"
+                >
+            </item>
+            <item android:id="@+id/logout"
+                android:title="Log out"
+                android:icon="@drawable/logout"
+                app:showAsAction="never"
+                >
+            </item>
+            </menu>
+        </item>
+
+    </menu>
+

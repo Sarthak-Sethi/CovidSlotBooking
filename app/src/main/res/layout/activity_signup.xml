@@ -19,7 +19,7 @@
                 android:id="@+id/animationView2"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                app:lottie_rawRes="@raw/loin"
+                app:lottie_rawRes="@raw/login"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"/>
 
@@ -45,17 +45,19 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    style="none"
                     app:hintTextColor="@android:color/black"
                     android:layout_marginTop="8dp"
-                    app:startIconDrawable="@drawable/name"
+                    app:startIconDrawable="@drawable/profile"
                     android:layout_marginBottom="8dp"
-                    android:background="@drawable/styling">
+                    android:background="@drawable/styling2"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/name"
                         android:layout_width="match_parent"
+                        android:background="@null"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/styling"
                         android:hint="Enter Your Name"
                         android:inputType="textPersonName"
                         android:padding="8dp" />
@@ -66,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
-                    android:background="@drawable/styling">
+                    android:background="@drawable/styling2">
                     <RadioGroup
                         android:id="@+id/gender"
                         android:layout_width="match_parent"
@@ -114,14 +116,15 @@
                         app:startIconDrawable="@drawable/address"
                         app:hintTextColor="@android:color/black"
                         android:layout_marginTop="8dp"
+                        android:background="@drawable/styling2"
                         android:layout_marginBottom="8dp"
-                        android:background="@drawable/styling">
+                        >
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/address"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/styling"
+                            android:background="@null"
                             android:hint="Enter Your Current  Address"
                             android:inputType="textPostalAddress"
                             android:padding="8dp" />
@@ -134,13 +137,13 @@
                     app:hintTextColor="@android:color/black"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
-                    android:background="@drawable/styling">
+                    android:background="@drawable/styling2">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/address2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/styling"
+                        android:background="@null"
                         android:hint="Enter Your Permanent  Address"
                         android:inputType="textPostalAddress"
                         android:padding="8dp" />
@@ -153,7 +156,7 @@
                     android:drawableLeft="@drawable/city2"
                     android:drawablePadding="17dp"
                     android:layout_marginTop="8sp"
-                    android:background="@drawable/styling"
+                    android:background="@drawable/styling2"
                     android:hint="Select Your City"
                     android:padding="12sp" />
 
@@ -164,15 +167,15 @@
                     app:hintTextColor="@android:color/black"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
-                    android:background="@drawable/styling">
+                    android:background="@drawable/styling2">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/pincode"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/styling"
                         android:maxLength="6"
                         android:hint="Enter Your Pin Code"
+                        android:background="@null"
                         android:inputType="number"
                         android:padding="8dp" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -186,15 +189,13 @@
                     app:hintTextColor="@android:color/black"
                     app:passwordToggleEnabled="true"
                     app:startIconDrawable="@drawable/password"
-                    app:endIconTint="@android:color/black"
-
-                    android:background="@drawable/styling">
+                    android:background="@drawable/styling2">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/styling"
+                        android:background="@null"
                         android:hint="Enter Your password"
                         android:inputType="textPassword"
                         android:padding="8dp" />
@@ -207,14 +208,14 @@
                     app:startIconDrawable="@drawable/phone"
                     android:layout_marginBottom="8dp"
                     app:hintTextColor="@android:color/black"
-                    android:background="@drawable/styling">
+                    android:background="@drawable/styling2">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/phoneno"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/styling"
                         android:hint="Enter Your Phone Number"
+                        android:background="@null"
                         android:inputType="number"
                         android:padding="8dp" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -227,13 +228,13 @@
                     app:startIconDrawable="@drawable/password"
                     android:layout_marginBottom="8dp"
                     app:passwordToggleEnabled="true"
-                    android:background="@drawable/styling">
+                    android:background="@drawable/styling2">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/confirmpassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/styling"
+                        android:background="@null"
                         android:hint="Confirm Your Password"
                         android:inputType="textPassword"
                         android:padding="8dp" />
