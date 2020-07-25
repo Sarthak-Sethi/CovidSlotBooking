@@ -1,10 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    android:id="@+id/drawyerlayout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="false"
+    tools:context=".MainActivity"
+    tools:openDrawer="start"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="wrap_content"
+            android:id="@+id/side_nav_view"
+            android:scrollbarAlwaysDrawHorizontalTrack="true"
+            app:headerLayout="@layout/header"
+            app:menu="@menu/sidemenu"
+            android:layout_gravity="start"
+            android:layout_height="match_parent">
+        </com.google.android.material.navigation.NavigationView>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+    >
+<!--    <include-->
+<!--        android:id="@+id/toolbar"-->
+
+<!--        layout="@layout/toolbar">-->
+<!--    </include>-->
     <FrameLayout
         android:layout_width="match_parent"
         android:id="@+id/fragment"
@@ -21,4 +45,6 @@
         android:background="@drawable/rounded"
         android:layout_height="70dp">
     </com.ismaeldivita.chipnavigation.ChipNavigationBar>
+
 </RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
