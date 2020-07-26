@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -45,6 +47,7 @@ public class Signup extends AppCompatActivity {
     TextInputEditText name,currentaddress,peraddress,password,password2,phoneno,pincode;
     AutoCompleteTextView city;
     RadioButton male,female,other;
+    CheckBox agreedtotnc;
     private static final String apiurl = "https://192.168.43.181/phpmyadmin/register.php";
     //="https://files.000webhost.com/"
   //  private static final String apiurl ="D:/android_projects/CovidSlotBooking/phpfiles/register.php";
@@ -69,6 +72,19 @@ public class Signup extends AppCompatActivity {
                 }
             }
         });
+        agreedtotnc.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    opendialog();
+                }
+            }
+        });
+    }
+
+    private void opendialog() {
+        Dialog dialog = new Dialog();
+        dialog.show(getSupportFragmentManager(),"example");
     }
     @SuppressLint("TrulyRandom")
     public static void handleSSLHandshake() {
@@ -153,6 +169,7 @@ public class Signup extends AppCompatActivity {
     }
 
     public void initialise() {
+        agreedtotnc = findViewById(R.id.agreetotnc);
         signupbtn = findViewById(R.id.signupbtn);
     name = findViewById(R.id.name);
     currentaddress = findViewById(R.id.address);
@@ -170,6 +187,12 @@ public class Signup extends AppCompatActivity {
     }
 
     public boolean checkfields() {
+
+        if(!agreedtotnc.isChecked()){
+            agreedtotnc.setError("please agree to move forward");
+            agreedtotnc.requestFocus();
+            return false;
+        }
 
         if(name.getText().toString().isEmpty()){
             name.setError("name can't be empty");

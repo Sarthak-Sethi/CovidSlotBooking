@@ -240,6 +240,16 @@
                         android:padding="8dp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <CheckBox
+                    android:layout_marginTop="8dp"
+                    android:id="@+id/agreetotnc"
+                    android:layout_marginBottom="8dp"
+                    android:layout_width="match_parent"
+                    android:text="I agree to the Terms and Conditions "
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_height="wrap_content"
+                    ></CheckBox>
+
                 <Button
                     android:id="@+id/signupbtn"
                     android:layout_width="match_parent"
