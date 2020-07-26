@@ -24,13 +24,6 @@
         app:showAsAction="never"
         >
     </item>
-
-            <item android:id="@+id/ourservices"
-                android:title="Services"
-                android:icon="@drawable/services"
-                app:showAsAction="never"
-                >
-            </item>
             <item android:id="@+id/ourproducts"
                 android:title="Our Products"
                 android:icon="@drawable/product"
@@ -39,7 +32,7 @@
             </item>
 
             <item android:id="@+id/updates"
-                android:title=" Check Updates"
+                android:title="Updates"
                 android:icon="@drawable/updates"
                 app:showAsAction="never"
                 >
@@ -56,14 +49,20 @@
                 app:showAsAction="never"
             >
             </item>
+                    <item android:id="@+id/contactus"
+                        android:title=" Contact Us"
+                        android:icon="@drawable/services"
+                        app:showAsAction="never"
+                        >
+                    </item>
         <item android:id="@+id/helpcenter"
-            android:title="Need Help"
+            android:title="Help Center"
             android:icon="@drawable/help"
             app:showAsAction="never"
             >
         </item>
             <item android:id="@+id/shareapp"
-                android:title="Share our App"
+                android:title="Share App"
                 android:icon="@drawable/sharepng"
                 app:showAsAction="never"
                 >

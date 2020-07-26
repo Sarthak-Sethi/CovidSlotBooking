@@ -8,6 +8,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
+import com.example.covidslotbooking.walkthrough.Walkthrough;
+
 public class Splash extends AppCompatActivity {
     private boolean isFirstAnimation = false;
     @Override
@@ -28,7 +30,7 @@ public class Splash extends AppCompatActivity {
             public void onAnimationEnd(Animation animation) {
                 if (!isFirstAnimation) {
                     imageView.clearAnimation();
-                    Intent intent = new Intent(Splash.this, whoareyou.class);
+                    Intent intent = new Intent(Splash.this, Walkthrough.class);
                     startActivity(intent);
                     finish();
                 }

@@ -10,15 +10,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
-import android.graphics.drawable.Icon;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.covidslotbooking.fragments.HomeFragment;
-import com.example.covidslotbooking.fragments.Servicesragment;
-import com.example.covidslotbooking.fragments.kitFragment;
+import com.example.covidslotbooking.fragments.Slotbooking;
 import com.google.android.material.navigation.NavigationView;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
@@ -29,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
+    private boolean disablebackbutton  = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.more);// set drawable icon
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setIcon(R.drawable.home);
-        
+
 
 
 
@@ -66,11 +65,13 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.home:
                         fragment = new HomeFragment();
                         break;
-                    case R.id.service:
-                        fragment = new Servicesragment();
+                    case R.id.slotbooking:
+                        fragment = new Slotbooking();
                         break;
-                    case R.id.kit:
-                        fragment = new kitFragment();
+                    case R.id.caller:
+                        Intent i = new Intent(Intent.ACTION_DIAL);
+                        i.setData(Uri.parse("tel:+91 9964906768"));
+                        startActivity(i);
                         break;
                 }
                 if(fragment!=null){
@@ -86,7 +87,40 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
+                switch (item.getItemId()){
+                    case R.id.profile :
+                        Intent intent1 = new Intent(getApplicationContext(),UserProfile.class);
+                        startActivity(intent1);
+                        break;
+                    case R.id.home:
+                        break;
+                    case  R.id.aboutus :
+                        Intent i = new Intent(getApplicationContext(),Aboutus.class);
+                        startActivity(i);
+                        break;
+                    case R.id.contactus :
+                        Intent intent = new Intent(getApplicationContext(),Contactus.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.ourproducts:
+                        Intent intent3 = new Intent(getApplicationContext(),Products.class);
+                        startActivity(intent3);
+                        break;
+                    case R.id.helpcenter:
+                        Intent intent4 = new Intent(getApplicationContext(),Helpcenter.class);
+                        startActivity(intent4);
+                        break;
+                    case R.id.updates:
+                        checkupdates();
+                        break;
+                    case R.id.shareapp:
+                       shareapp();
+                        break;
+                    case R.id.logout:
+                        disablebackbutton = true;
+                        logout();
+                        break;
+                }
                 return false;
             }
         });
@@ -97,6 +131,9 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         if(drawerLayout.isDrawerOpen(GravityCompat.START)){
             drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        if(disablebackbutton){
+
         }
         else
         super.onBackPressed();
@@ -119,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
 //                startActivity(i);
 //                break;
 //            case R.id.service :
-//                Intent intent = new Intent(getApplicationContext(),Services.class);
+//                Intent intent = new Intent(getApplicationContext(),Contactus.class);
 //                startActivity(intent);
 //                break;
 //            case R.id.ourproducts:

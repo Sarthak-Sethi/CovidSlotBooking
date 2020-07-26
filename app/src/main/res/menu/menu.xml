@@ -10,17 +10,17 @@
         android:icon="@drawable/home"/>
 
     <item
-        android:id="@+id/service"
+        android:id="@+id/slotbooking"
         app:cnb_iconColor="@android:color/black"
         app:cnb_textColor="@android:color/black"
-        android:title="services"
+        android:title="Slot Booking"
         android:icon="@drawable/services"/>
 
     <item
-        android:id="@+id/kit"
+        android:id="@+id/caller"
         app:cnb_iconColor="@android:color/black"
         app:cnb_textColor="@android:color/black"
-        android:title="qurantine kit"
+        android:title="Caller"
         android:icon="@drawable/kit"/>
 
 <!--    <item-->
