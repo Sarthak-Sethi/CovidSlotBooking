@@ -21,10 +21,11 @@
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/animationView2"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            app:lottie_rawRes="@raw/login"
+            android:layout_height="153dp"
+            android:layout_marginTop="0dp"
             app:lottie_autoPlay="true"
-            app:lottie_loop="true"/>
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/login" />
 
         <TextView
             android:layout_width="match_parent"
@@ -96,14 +97,14 @@
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <CheckBox
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:layout_width="match_parent"
-                android:text="I am an Admin "
-                android:textColor="@color/colorPrimaryDark"
-                android:layout_height="wrap_content"
-                ></CheckBox>
+               android:textAlignment="viewEnd"
+                android:text="Forgot Password ? "
+                android:textColor="@color/colorPrimaryDark"></TextView>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -116,38 +117,44 @@
         android:progress="25"
         android:visibility="gone" />
 
-    <LinearLayout
-        android:id="@+id/linearlayout2"
+    <Button
+        android:id="@+id/loginbtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_below="@id/card_view"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/buttons"
+        android:padding="6dp"
+        android:text="login"
+        android:textColor="@android:color/black" />
 
-        <Button
-            android:id="@+id/loginbtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/card_view"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/buttons"
-            android:padding="12dp"
-            android:text="login"
-            android:textColor="@android:color/black" />
+    <TextView
+        android:id="@+id/link_signup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginbtn"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="New here ? "
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16dp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/link_signup"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/loginbtn"
-            android:layout_marginBottom="24dp"
-            android:gravity="center"
-            android:textColor="@color/colorPrimaryDark"
-            android:text="Dont Have an Account ? "
-            android:textSize="16dip"
-            android:textStyle="bold" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/signupbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/link_signup"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/styling2"
+        android:textStyle="bold"
+        android:padding="6dp"
+        android:text="CREATE A NEW ACCOUNT"
+        android:textColor="@color/colorPrimaryDark" />
+
 </RelativeLayout>
 
 

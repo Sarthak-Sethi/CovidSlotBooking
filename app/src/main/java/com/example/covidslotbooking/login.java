@@ -35,7 +35,7 @@ import javax.net.ssl.X509TrustManager;
 public class login extends AppCompatActivity {
 TextInputEditText phonenumber;
 TextInputEditText password;
-TextView signupnewuser;
+Button signupnewuser;
 Button loginbtn;
 String url = "https://192.168.43.181/phpmyadmin/login.php?phoneno=";
     @Override
@@ -119,7 +119,7 @@ String url = "https://192.168.43.181/phpmyadmin/login.php?phoneno=";
     }
 
     public void initialise(){
-        signupnewuser = findViewById(R.id.link_signup);
+        signupnewuser = findViewById(R.id.signupbtn);
         phonenumber = findViewById(R.id.phoneno);
         password = findViewById(R.id.edittxtpassword);
         loginbtn = findViewById(R.id.loginbtn);
