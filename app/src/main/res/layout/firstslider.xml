@@ -19,35 +19,6 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.5"
-        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="match_parent"
-           android:layout_marginTop="60dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginEnd="25sp"
-            android:text=" some text here "
-            android:textColor="@color/colorPrimaryDark"
-            android:gravity="center"
-            android:textSize="35sp"
-            android:textStyle="bold"/>
-
-<!--        <TextView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Women Fashion Shopping Online - Shop from a huge range of latest women clothing, shoes, makeup Kits, Watches, footwear and more for women at best price"-->
-<!--            android:layout_marginStart="25dp"-->
-<!--            android:layout_marginEnd="25sp"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            android:textColor="@android:color/black"-->
-<!--            android:gravity="center"-->
-<!--            android:textSize="15sp" />-->
-
-    </LinearLayout>
 
 </LinearLayout>

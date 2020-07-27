@@ -46,10 +46,12 @@ String url = "https://192.168.43.181/phpmyadmin/login.php?phoneno=";
        loginbtn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               if(checkfields()){
-                   handleSSLHandshake();
-                   verifydetailsandlogin();
-               }
+             //  if(checkfields()){
+               //    handleSSLHandshake();
+                 //  verifydetailsandlogin();
+                   Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                   startActivity(i);
+              // }
            }
        });
        signupnewuser.setOnClickListener(new View.OnClickListener() {

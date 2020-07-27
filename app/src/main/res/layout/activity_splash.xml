@@ -18,6 +18,36 @@
         android:layout_height="210dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:src="@drawable/ic_launcher_background" />
+        android:src="@drawable/splahslogo" />
+
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/header_icon"
+        android:id="@+id/developedby"
+    android:layout_centerVertical="true"
+    android:layout_marginTop="354dp"
+    android:gravity="bottom"
+    android:text=" Developed by"
+    android:textAlignment="center"
+    android:textColor="@color/colorPrimaryDark"
+    android:textSize="20sp"
+    android:textStyle="bold">
+
+</TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/developedby"
+        android:layout_centerVertical="true"
+        android:gravity="bottom"
+        android:text="Dwaipayana Technologies, Bengaluru"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:textStyle="bold">
+
+    </TextView>
 
 </RelativeLayout>

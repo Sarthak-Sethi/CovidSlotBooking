@@ -50,7 +50,7 @@
             >
             </item>
                     <item android:id="@+id/contactus"
-                        android:title=" Contact Us"
+                        android:title="Contact Us"
                         android:icon="@drawable/services"
                         app:showAsAction="never"
                         >
@@ -84,9 +84,6 @@
                 </group>
             </menu>
         </item>
-
-<!--            </menu>-->
-<!--        </item>-->
-
+    
     </menu>
 

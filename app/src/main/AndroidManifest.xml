@@ -14,18 +14,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".walkthrough.Walkthrough">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".UserProfile" />
         <activity android:name=".Helpcenter" />
         <activity android:name=".Products" />
         <activity android:name=".Contactus" />
         <activity android:name=".Aboutus" />
-        <activity android:name=".Splash"></activity>
+        <activity android:name=".Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Signup" />
         <activity android:name=".login" />
         <activity android:name=".MainActivity">
