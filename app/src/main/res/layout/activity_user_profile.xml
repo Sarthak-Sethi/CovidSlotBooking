@@ -63,6 +63,8 @@
     </TextView>
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_below="@+id/profile_image_change_btn"
+        android:layout_marginTop="50dp"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:orientation="vertical"
@@ -146,7 +148,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/setting_submit_btn"
+            android:id="@+id/setting_update_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
