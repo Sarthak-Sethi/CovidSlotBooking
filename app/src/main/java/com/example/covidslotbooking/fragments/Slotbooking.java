@@ -1,5 +1,6 @@
 package com.example.covidslotbooking.fragments;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.example.covidslotbooking.R;
 
@@ -16,7 +20,9 @@ import com.example.covidslotbooking.R;
  * create an instance of this fragment.
  */
 public class Slotbooking extends Fragment {
-
+RadioButton day5,day7,day10;
+RadioGroup radioGroup;
+ImageView imageView;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -61,6 +67,72 @@ public class Slotbooking extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_slotbooking, container, false);
+        final View view =  inflater.inflate(R.layout.fragment_slotbooking, container, false);
+        day5 = view.findViewById(R.id.day5radiobton);
+        day7 = view.findViewById(R.id.day7radiobton);
+        day10 = view.findViewById(R.id.day10radiobton);
+        radioGroup = view.findViewById(R.id.radiopgroup);
+        imageView = view.findViewById(R.id.imageview);
+//        if(day5.isChecked() || day7.isChecked() || day10.isChecked()){
+//            onRadioButtonClicked(view);
+//        }
+        day5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                day5.setTextColor(Color.WHITE);
+                day7.setTextColor(Color.BLACK);
+                day10.setTextColor(Color.BLACK);
+                imageView.setImageResource(R.drawable.backgroundhome);
+            }
+        });
+        day7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                day5.setTextColor(Color.BLACK);
+                day7.setTextColor(Color.WHITE);
+                day10.setTextColor(Color.BLACK);
+                imageView.setImageResource(R.drawable.backgroundcard);
+            }
+        });
+        day10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                day5.setTextColor(Color.BLACK);
+                day7.setTextColor(Color.BLACK);
+                day10.setTextColor(Color.WHITE);
+                imageView.setImageResource(R.drawable.backgroundpic);
+            }
+        });
+        return view;
+    }
+    public void onRadioButtonClicked(View view) {
+    boolean isSelected = day5.isChecked() || day7.isChecked() || day10.isChecked();
+    switch (view.getId()){
+        case R.id.day5radiobton:
+            if(isSelected) {
+                day5.setTextColor(Color.WHITE);
+                day7.setTextColor(Color.BLACK);
+                day10.setTextColor(Color.BLACK);
+                imageView.setImageResource(R.drawable.sliderimag1);
+            }
+            break;
+        case R.id.day7radiobton:
+            if(isSelected) {
+                day5.setTextColor(Color.BLACK);
+                day7.setTextColor(Color.WHITE);
+                day10.setTextColor(Color.BLACK);
+                imageView.setImageResource(R.drawable.backgroundcard);
+            }
+            break;
+        case R.id.day10radiobton:
+            if(isSelected) {
+                day5.setTextColor(Color.BLACK);
+                day7.setTextColor(Color.BLACK);
+                day10.setTextColor(Color.WHITE);
+                imageView.setImageResource(R.drawable.backgroundpic);
+            }
+            break;
+
+    }
     }
 }

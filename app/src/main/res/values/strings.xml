@@ -8,4 +8,50 @@
         We have different packages with slot booking systems. Also we provide Home quarantine services with  24/7 teleconference support.
         24/7 medical assistance available to monitor symptoms on demand.
         We also provide home quarantine kits for the users and can buy through online by making online payment. </string>
+    <string name="desc1">
+<b>5 Days Package</b> :-
+\nIncludes :-\n
+●	Room rent\n
+●	3 meals\n
+●	Doctor and nurse visit once a day \n\n
+7 days Package  :-\n
+\nIncludes :-\n
+●	Room rent\n
+●	3 meals\n
+●	Doctor and nurse visit once a day\n\n
+        10 Days Package :-\n
+\nIncludes :-\n
+●	Room rent\n
+●	3 meals\n
+●	Doctor and nurse visit once a day\n
+<!--Exclusion for all the packages.-->
+<!--●	Pharmacy items (Door delivery)-->
+<!--●	Lab and Radiology tests-->
+<!--●	Extra food delivery.-->
+<!--●	Charges for video consultation with TSR COVID 19 Specialist-->
+
+</string>
+    <string name="desc2">
+TSR HEART CARE AND DIAGNOSTICS, BANGALORE \n INTRODUCES \n\n
+
+\nHome Quarantine Package for COVID 19 Patients.\n
+\n(Asymptomatic And mildly symptomatic patients)\n
+
+\n● App based self-monitoring of temperature and other symptoms.\n
+● Tele-assistance on home isolation protocols.\n
+● Video consultation with doctor on 7th and 15 days   +2 additional video consults.\n
+● Consultation with a clinical psychologist.\n
+● Consultation with a dietician.\n
+● Consultation with tele-rehabilitation specialist.\n
+● 24/7 medical assistance available to monitor\tsymptoms on demand.\n
+● 24/7 Covid 19 helpline available.
+</string>
+
+<string name="desc3">
+●	Home sample collection \n
+●	Additional tele- consultation \n
+●	Additional counselling sessions \n
+●	Includes Pulse oximeter | Digital thermometer \n|N95 masks \n
+●	Examination Gloves|Vitamin C|Paracetamol|Sinarest \n
+</string>
 </resources>

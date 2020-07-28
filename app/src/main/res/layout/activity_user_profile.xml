@@ -87,6 +87,24 @@
             android:inputType="textPersonName"
             android:padding="8dp" />
     </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:startIconDrawable="@drawable/phone"
+            android:layout_marginBottom="8dp"
+            app:hintTextColor="@android:color/black"
+            android:background="@drawable/styling2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/prevphoneno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your previous Phone Number"
+                android:background="@null"
+                android:inputType="number"
+                android:padding="8dp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -101,7 +119,7 @@
             android:id="@+id/phoneno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Change Your Phone Number"
+            android:hint="New Phone Number"
             android:background="@null"
             android:inputType="number"
             android:padding="8dp" />

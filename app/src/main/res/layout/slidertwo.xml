@@ -14,7 +14,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            android:background="@drawable/sliderimg2"
+            android:background="@drawable/sliderimage2png"
             android:layout_gravity="center"/>
 
     </LinearLayout>
