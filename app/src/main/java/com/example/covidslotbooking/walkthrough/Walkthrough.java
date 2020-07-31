@@ -42,6 +42,7 @@ private LinearLayout layoutDots;
         viewPagerAdapter = new ViewPageAdapter();
 
         layouts = new int[]{
+                R.layout.sliderone,
                 R.layout.firstslider,
                 R.layout.slidertwo,
         };

@@ -49,14 +49,12 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setIcon(R.drawable.home);
 
-
-
-
-//        if(savedInstanceState == null){
-//            chipNavigationBar.setItemSelected(R.id.home,true);
-//            HomeFragment homeFragment = new HomeFragment();
-//            fragmentManager.beginTransaction().replace(R.id.fragment,homeFragment).commit();
-//        }
+        if(savedInstanceState == null){
+            chipNavigationBar.setItemSelected(R.id.home,true);
+            fragmentManager = getSupportFragmentManager();
+            HomeFragment homeFragment = new HomeFragment();
+            fragmentManager.beginTransaction().replace(R.id.fragment,homeFragment).commit();
+        }
         chipNavigationBar.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
             @Override
             public void onItemSelected(int id) {
@@ -72,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
                         Intent i = new Intent(Intent.ACTION_DIAL);
                         i.setData(Uri.parse("tel:+91 9964906768"));
                         startActivity(i);
+                        break;
+                    default:
+                        fragment = new HomeFragment();
                         break;
                 }
                 if(fragment!=null){
@@ -93,6 +94,8 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent1);
                         break;
                     case R.id.home:
+                        Intent ihome = new Intent(getApplicationContext(),MainActivity.class);
+                        startActivity(ihome);
                         break;
                     case  R.id.aboutus :
                         Intent i = new Intent(getApplicationContext(),Aboutus.class);

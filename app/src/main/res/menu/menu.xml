@@ -14,14 +14,14 @@
         app:cnb_iconColor="@android:color/black"
         app:cnb_textColor="@android:color/black"
         android:title="Slot Booking"
-        android:icon="@drawable/services"/>
+        android:icon="@drawable/kit"/>
 
     <item
         android:id="@+id/caller"
         app:cnb_iconColor="@android:color/black"
         app:cnb_textColor="@android:color/black"
         android:title="Caller"
-        android:icon="@drawable/kit"/>
+        android:icon="@drawable/callermenu"/>
 
 <!--    <item-->
 <!--        android:id="@+id/item4"-->

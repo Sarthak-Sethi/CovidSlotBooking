@@ -14,6 +14,7 @@ import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -48,13 +49,13 @@ public class Signup extends AppCompatActivity {
     AutoCompleteTextView city;
     RadioButton male,female,other;
     CheckBox agreedtotnc;
+    LottieAnimationView progressbar;
     private static final String apiurl = "https://192.168.43.181/phpmyadmin/register.php";
     //="https://files.000webhost.com/"
   //  private static final String apiurl ="D:/android_projects/CovidSlotBooking/phpfiles/register.php";
     ArrayList cities_list;
     RequestQueue requestQueue;
     Button signupbtn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,9 +67,10 @@ public class Signup extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(checkfields()){
+                    progressbar.setVisibility(View.VISIBLE);
                 handleSSLHandshake();
                     savedataindatabase();
-                Toast.makeText(getApplicationContext(),"login succes",Toast.LENGTH_LONG).show();
+                    progressbar.setVisibility(View.GONE);
                 }
             }
         });
@@ -127,7 +129,6 @@ public class Signup extends AppCompatActivity {
                 Log.e("json",success);
                 if(success.equals("1")){
                     Log.e("sucessfull","recieved success");
-                    Toast.makeText(getApplicationContext(),"Registaration Successfull",Toast.LENGTH_LONG).show();
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -136,7 +137,9 @@ public class Signup extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-    Log.e("in error response",error+" ");
+                 Log.e("in error response",error+" ");
+                 Toast.makeText(getApplicationContext(),
+                         "Make sure You have an active Internet connection and try again ",Toast.LENGTH_LONG).show();
             }
         })
         {
@@ -169,6 +172,8 @@ public class Signup extends AppCompatActivity {
     }
 
     public void initialise() {
+        progressbar = findViewById(R.id.progressbar);
+        progressbar.setVisibility(View.GONE);
         agreedtotnc = findViewById(R.id.agreetotnc);
         signupbtn = findViewById(R.id.signupbtn);
     name = findViewById(R.id.name);

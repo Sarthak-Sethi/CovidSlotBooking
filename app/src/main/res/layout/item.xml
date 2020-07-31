@@ -4,6 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    app:cardCornerRadius="30dp"
     style="@style/CardView.Light"
     android:layout_marginTop="8dp"
     android:layout_marginStart="8dp"

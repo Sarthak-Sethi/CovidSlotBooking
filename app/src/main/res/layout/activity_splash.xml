@@ -12,13 +12,25 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@android:color/white">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:text="TSR Heart Care And Diagnostics"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="30sp"
+        android:textStyle="bold">
+
+    </TextView>
+
     <ImageView
         android:id="@+id/header_icon"
-        android:layout_width="280dp"
-        android:layout_height="210dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/splahslogo" />
+        android:layout_marginTop="180dp"
+        android:src="@drawable/logo" />
 
     <TextView
     android:layout_width="match_parent"
@@ -26,7 +38,7 @@
     android:layout_below="@id/header_icon"
         android:id="@+id/developedby"
     android:layout_centerVertical="true"
-    android:layout_marginTop="354dp"
+    android:layout_marginTop="110dp"
     android:gravity="bottom"
     android:text=" Developed by"
     android:textAlignment="center"
@@ -43,7 +55,6 @@
         android:layout_centerVertical="true"
         android:gravity="bottom"
         android:text="Dwaipayana Technologies, Bengaluru"
-        android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         android:textStyle="bold">

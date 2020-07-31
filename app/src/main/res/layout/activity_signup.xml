@@ -153,7 +153,7 @@
                     android:id="@+id/city"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/city2"
+                    android:drawableLeft="@drawable/city"
                     android:drawablePadding="17dp"
                     android:layout_marginTop="8sp"
                     android:background="@drawable/styling2"
@@ -263,6 +263,12 @@
 
             </LinearLayout>
             </ScrollView>
-
-
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/ecg" />
 </RelativeLayout>

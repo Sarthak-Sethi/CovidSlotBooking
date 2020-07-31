@@ -1,5 +1,6 @@
 package com.example.covidslotbooking.fragments;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -8,10 +9,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.example.covidslotbooking.ConfirmSlotBooking;
 import com.example.covidslotbooking.R;
 
 /**
@@ -23,6 +26,7 @@ public class Slotbooking extends Fragment {
 RadioButton day5,day7,day10;
 RadioGroup radioGroup;
 ImageView imageView;
+Button slotbookingbtn;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -82,7 +86,6 @@ ImageView imageView;
                 day5.setTextColor(Color.WHITE);
                 day7.setTextColor(Color.BLACK);
                 day10.setTextColor(Color.BLACK);
-                imageView.setImageResource(R.drawable.backgroundhome);
             }
         });
         day7.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +94,6 @@ ImageView imageView;
                 day5.setTextColor(Color.BLACK);
                 day7.setTextColor(Color.WHITE);
                 day10.setTextColor(Color.BLACK);
-                imageView.setImageResource(R.drawable.backgroundcard);
             }
         });
         day10.setOnClickListener(new View.OnClickListener() {
@@ -100,39 +102,17 @@ ImageView imageView;
                 day5.setTextColor(Color.BLACK);
                 day7.setTextColor(Color.BLACK);
                 day10.setTextColor(Color.WHITE);
-                imageView.setImageResource(R.drawable.backgroundpic);
+            }
+        });
+        slotbookingbtn = view.findViewById(R.id.slotbookibgbtn);
+        slotbookingbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               Intent i = new Intent(getContext(), ConfirmSlotBooking.class);
+               startActivity(i);
             }
         });
         return view;
     }
-    public void onRadioButtonClicked(View view) {
-    boolean isSelected = day5.isChecked() || day7.isChecked() || day10.isChecked();
-    switch (view.getId()){
-        case R.id.day5radiobton:
-            if(isSelected) {
-                day5.setTextColor(Color.WHITE);
-                day7.setTextColor(Color.BLACK);
-                day10.setTextColor(Color.BLACK);
-                imageView.setImageResource(R.drawable.sliderimag1);
-            }
-            break;
-        case R.id.day7radiobton:
-            if(isSelected) {
-                day5.setTextColor(Color.BLACK);
-                day7.setTextColor(Color.WHITE);
-                day10.setTextColor(Color.BLACK);
-                imageView.setImageResource(R.drawable.backgroundcard);
-            }
-            break;
-        case R.id.day10radiobton:
-            if(isSelected) {
-                day5.setTextColor(Color.BLACK);
-                day7.setTextColor(Color.BLACK);
-                day10.setTextColor(Color.WHITE);
-                imageView.setImageResource(R.drawable.backgroundpic);
-            }
-            break;
 
-    }
-    }
 }

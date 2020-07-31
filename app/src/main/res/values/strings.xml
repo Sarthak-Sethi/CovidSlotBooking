@@ -24,11 +24,11 @@
 ●	Room rent\n
 ●	3 meals\n
 ●	Doctor and nurse visit once a day\n
-<!--Exclusion for all the packages.-->
-<!--●	Pharmacy items (Door delivery)-->
-<!--●	Lab and Radiology tests-->
-<!--●	Extra food delivery.-->
-<!--●	Charges for video consultation with TSR COVID 19 Specialist-->
+        <!--Exclusion for all the packages.-->
+        <!--●	Pharmacy items (Door delivery)-->
+        <!--●	Lab and Radiology tests-->
+        <!--●	Extra food delivery.-->
+        <!--●	Charges for video consultation with TSR COVID 19 Specialist-->
 
 </string>
     <string name="desc2">
@@ -47,7 +47,7 @@ TSR HEART CARE AND DIAGNOSTICS, BANGALORE \n INTRODUCES \n\n
 ● 24/7 Covid 19 helpline available.
 </string>
 
-<string name="desc3">
+    <string name="desc3">
 ●	Home sample collection \n
 ●	Additional tele- consultation \n
 ●	Additional counselling sessions \n
