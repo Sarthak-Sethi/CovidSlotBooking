@@ -9,22 +9,34 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
+import com.example.covidslotbooking.ecommerce.Products;
 import com.example.covidslotbooking.fragments.HomeFragment;
 import com.example.covidslotbooking.fragments.Slotbooking;
 import com.google.android.material.navigation.NavigationView;
 import com.ismaeldivita.chipnavigation.ChipNavigationBar;
+
+import java.util.List;
+
+import static android.os.Build.ID;
 
 
 public class MainActivity extends AppCompatActivity {
     ChipNavigationBar chipNavigationBar;
     FragmentManager fragmentManager;
     DrawerLayout drawerLayout;
+    Button button;
     NavigationView navigationView;
     Toolbar toolbar;
     private boolean disablebackbutton  = false;
@@ -37,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawyerlayout);
         navigationView = findViewById(R.id.side_nav_view);
         toolbar = findViewById(R.id.toolbar);
+
+
         // use our tool bar
       //  setSupportActionBar(toolbar);
     navigationView.bringToFront();
@@ -106,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.ourproducts:
-                        Intent intent3 = new Intent(getApplicationContext(),Products.class);
+                        Intent intent3 = new Intent(getApplicationContext(), Products.class);
                         startActivity(intent3);
                         break;
                     case R.id.helpcenter:
@@ -129,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
 
     @Override
     public void onBackPressed() {

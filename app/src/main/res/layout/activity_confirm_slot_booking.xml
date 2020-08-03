@@ -50,7 +50,7 @@
                 android:layout_marginTop="8dp"
                 app:startIconDrawable="@drawable/profile"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/styling2"
+
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -70,7 +70,7 @@
                 app:startIconDrawable="@drawable/address"
                 app:hintTextColor="@android:color/black"
                 android:layout_marginTop="8dp"
-                android:background="@drawable/styling2"
+
                 android:layout_marginBottom="8dp"
                 >
 
@@ -91,7 +91,7 @@
                 app:hintTextColor="@android:color/black"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/styling2">
+              >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/address2"
@@ -110,7 +110,6 @@
                 android:drawableLeft="@drawable/city"
                 android:drawablePadding="17dp"
                 android:layout_marginTop="8sp"
-                android:background="@drawable/styling2"
                 android:hint="Select Your City"
                 android:padding="12sp" />
 
@@ -121,7 +120,7 @@
                 app:hintTextColor="@android:color/black"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:background="@drawable/styling2">
+    >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/pincode"
@@ -141,7 +140,7 @@
                 app:startIconDrawable="@drawable/phone"
                 android:layout_marginBottom="8dp"
                 app:hintTextColor="@android:color/black"
-                android:background="@drawable/styling2">
+                >
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/phoneno"
@@ -160,7 +159,7 @@
                 app:startIconDrawable="@drawable/date"
                 android:layout_marginBottom="8dp"
                 app:hintTextColor="@android:color/black"
-                android:background="@drawable/styling2">
+               >
 
 <!--                <com.google.android.material.textfield.TextInputEditText-->
 <!--                    android:id="@+id/dateofbooking"-->

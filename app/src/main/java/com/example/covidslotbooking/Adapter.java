@@ -18,10 +18,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     private ArrayList<item> items;
     private Context context;
+    onClick onClick;
 
-    public Adapter(ArrayList<item> items, Context context) {
+    public Adapter(ArrayList<item> items,onClick onClick) {
         this.items = items;
-        this.context = context;
+        this.onClick = onClick;
     }
 
     @NonNull
@@ -29,7 +30,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     public Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item,
                 parent,false);
-        return new ViewHolder(view);
+        ViewHolder viewHolder = new ViewHolder(view,onClick);
+        return viewHolder;
     }
 
     @Override
@@ -56,16 +58,24 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         return items.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView imageView;
         ExpandableTextView descTextView;
         TextView titleTextView;
-
-        public ViewHolder(@NonNull View itemView) {
+        onClick onClick;
+        public ViewHolder(@NonNull View itemView , onClick onClick) {
             super(itemView);
             descTextView = itemView.findViewById(R.id.descTextView);
             titleTextView = itemView.findViewById(R.id.titleTextView);
         }
+
+        @Override
+        public void onClick(View v) {
+        onClick.onClick(getAdapterPosition());
+        }
+    }
+    public interface onClick{
+        void onClick(int position);
     }
 }

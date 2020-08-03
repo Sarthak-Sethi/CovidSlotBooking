@@ -1,27 +1,39 @@
 package com.example.covidslotbooking.fragments;
 
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.covidslotbooking.Adapter;
 import com.example.covidslotbooking.R;
 import com.example.covidslotbooking.item;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import static android.os.Build.ID;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements Adapter.onClick {
     private ArrayList<item> arrayList = new ArrayList<>();
 
     // TODO: Rename parameter arguments, choose names that match
@@ -70,15 +82,42 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         final View view  =  inflater.inflate(R.layout.fragment_home, container, false);
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(new Adapter(arrayList,getContext()));
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         item item1 = new item("TSR COVID 19 CENTER (HOTEL) ",getString(R.string.desc1));
         item item2 = new item("HOME QUARANTINE PROGRAM",getString(R.string.desc2));
         item item3 = new item("COVID HOMECARE KIT",getString(R.string.desc3));
         arrayList.add(item1);
         arrayList.add(item2);
         arrayList.add(item3);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        RecyclerView.Adapter adapter = new Adapter(arrayList,this);
+        recyclerView.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
         return view;
     }
+
+    @Override
+    public void onClick(int position) {
+        Log.e("duo",position+"");
+        if (position == 0|| position ==1 || position == 2){
+            intentforgoogleduo();
+        }
+    }
+    public void intentforgoogleduo(){
+        Log.e("duo","fn called");
+        Intent intent = new Intent();
+        intent.setPackage("com.google.android.apps.tachyon.ContactsVideoActionActivity");
+        intent.setAction("com.google.android.apps.tachyon.action.CALL");
+        intent.setData(Uri.parse("tel:9964906768"));
+        startActivity(intent);
+    }
+//    public void onClick(int position) {
+//        Log.e("pos",position+" ");
+//        if (position == 1){
+//            View view = null;
+//            Intent opengoogleduo = view.getPackageManager().getLaunchIntentForPackage("duo.app.goo.gl");
+//            startActivity(opengoogleduo);
+//        }
+//    }
+
 }

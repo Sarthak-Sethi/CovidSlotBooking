@@ -31,7 +31,7 @@ android:layout_height="match_parent"
 <!--    </include>-->
     <FrameLayout
         android:layout_width="match_parent"
-        android:background="@drawable/option6"
+        android:background="@drawable/option1"
         android:id="@+id/fragment"
         android:layout_height="match_parent">
     </FrameLayout>
