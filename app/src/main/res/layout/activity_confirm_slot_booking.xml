@@ -56,7 +56,6 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/name"
                     android:layout_width="match_parent"
-                    android:background="@null"
                     android:layout_height="wrap_content"
                     android:hint="Enter Your Name"
                     android:inputType="textPersonName"
@@ -78,7 +77,6 @@
                     android:id="@+id/address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@null"
                     android:hint="Enter Your Current  Address"
                     android:inputType="textPostalAddress"
                     android:padding="8dp" />
@@ -97,7 +95,6 @@
                     android:id="@+id/address2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@null"
                     android:hint="Enter Your Permanent  Address"
                     android:inputType="textPostalAddress"
                     android:padding="8dp" />

@@ -22,15 +22,18 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -49,6 +52,7 @@ public class ConfirmSlotBooking extends AppCompatActivity {
     EditText dateofbooking;
     AutoCompleteTextView city;
     CheckBox agreedtotnc;
+    ArrayList cities_list;
     Button confirmslotbtn;
     private static final String apiurl = "https://192.168.43.181/phpmyadmin/slotbooking.php";
     DatePickerDialog.OnDateSetListener dateSetListener;
@@ -57,6 +61,7 @@ public class ConfirmSlotBooking extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm_slot_booking);
         initialise();
+        fetchcityfromjson();
         dateofbooking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,6 +129,7 @@ public class ConfirmSlotBooking extends AppCompatActivity {
             public void onResponse(String response) {
                 try{
                     Log.e("in try","in try");
+                    Toast.makeText(getApplicationContext(),"Slot Booked sucessfully",Toast.LENGTH_LONG).show();
                     JSONObject jsonObject = new JSONObject(response);
                     String success = jsonObject.getString("success");
                     Log.e("json",success);
@@ -135,12 +141,7 @@ public class ConfirmSlotBooking extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("in error response",error+" ");
-            }
-        })
+        }, error -> Log.e("in error response",error+" "))
         {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
@@ -160,6 +161,34 @@ public class ConfirmSlotBooking extends AppCompatActivity {
         requestQueue.add(stringRequest);
 
     }
+    public void fetchcityfromjson(){
+        Log.e("SARTHAK","injson");
+       RequestQueue requestQueue = Volley.newRequestQueue(this);
+        String url =  "https://www.json-generator.com/api/json/get/cgoxLceAlK?indent=2";
+        final JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            JSONArray jsonArray = response.getJSONArray("cities");
+
+                            for (int i=0;i<jsonArray.length();i++){
+                                JSONObject cities = jsonArray.getJSONObject(i);
+                                String city = cities.getString("City");
+                                cities_list.add(city);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("Error Occured :  " ,error.getMessage());
+            }
+        });
+        requestQueue.add(request);
+    }
     public void initialise() {
         agreedtotnc = findViewById(R.id.agreetotnc);
         confirmslotbtn = findViewById(R.id.confirmslotbtn);
@@ -170,6 +199,8 @@ public class ConfirmSlotBooking extends AppCompatActivity {
         phoneno =  findViewById(R.id.phoneno);
         pincode = findViewById(R.id.pincode);
         dateofbooking = findViewById(R.id.dateofbooking);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,cities_list);
+        city.setAdapter(adapter);
     }
     public boolean checkfields() {
 

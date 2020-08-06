@@ -70,6 +70,7 @@ Button slotbookingbtn;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         final View view =  inflater.inflate(R.layout.fragment_slotbooking, container, false);
         day5 = view.findViewById(R.id.day5radiobton);

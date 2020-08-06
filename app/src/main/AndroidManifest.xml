@@ -12,25 +12,29 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".ecommerce.ProductDetails"></activity>
-        <activity android:name=".ConfirmSlotBooking"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ecommerce.PaymentUsingUpi"></activity>
+        <activity android:name=".CartActivity" />
+        <activity android:name=".ecommerce.ProductDetails" />
+        <activity android:name=".ConfirmSlotBooking" />
         <activity android:name=".walkthrough.Walkthrough" />
         <activity android:name=".UserProfile" />
         <activity android:name=".Helpcenter" />
         <activity android:name=".ecommerce.Products" />
         <activity android:name=".Contactus" />
         <activity android:name=".Aboutus" />
-        <activity android:name=".Splash">
-        </activity>
-        <activity android:name=".Signup" />
-        <activity android:name=".login" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Splash" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Signup" />
+        <activity android:name=".login" />
+        <activity android:name=".MainActivity">
+
         </activity>
     </application>
 

@@ -2,7 +2,8 @@
 <resources>
     <color name="colorPrimary">#ed8138</color>
     <color name="colorPrimaryDark">#ed8138</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="blue">#03DAC5</color>
+
 
     // dots inactive colors
     <color name="dark_one">#dcdcdc</color>

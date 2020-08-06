@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.example.covidslotbooking.Adapter;
 import com.example.covidslotbooking.R;
 import com.example.covidslotbooking.item;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,7 +81,9 @@ public class HomeFragment extends Fragment implements Adapter.onClick {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        FloatingActionButton videocallbtn;
         final View view  =  inflater.inflate(R.layout.fragment_home, container, false);
+        videocallbtn = view.findViewById(R.id.videocallbtn);
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         item item1 = new item("TSR COVID 19 CENTER (HOTEL) ",getString(R.string.desc1));
         item item2 = new item("HOME QUARANTINE PROGRAM",getString(R.string.desc2));
@@ -93,6 +96,9 @@ public class HomeFragment extends Fragment implements Adapter.onClick {
         RecyclerView.Adapter adapter = new Adapter(arrayList,this);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+        videocallbtn.setOnClickListener(v -> {
+        intentforgoogleduo();
+        });
         return view;
     }
 
@@ -106,7 +112,7 @@ public class HomeFragment extends Fragment implements Adapter.onClick {
     public void intentforgoogleduo(){
         Log.e("duo","fn called");
         Intent intent = new Intent();
-        intent.setPackage("com.google.android.apps.tachyon.ContactsVideoActionActivity");
+        intent.setPackage("com.google.android.apps.tachyon");
         intent.setAction("com.google.android.apps.tachyon.action.CALL");
         intent.setData(Uri.parse("tel:9964906768"));
         startActivity(intent);
