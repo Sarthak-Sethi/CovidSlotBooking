@@ -153,6 +153,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                app:helperText="Click again to get dates"
                 app:startIconDrawable="@drawable/date"
                 android:layout_marginBottom="8dp"
                 app:hintTextColor="@android:color/black"

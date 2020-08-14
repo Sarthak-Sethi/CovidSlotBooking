@@ -62,7 +62,7 @@ public class PaymentUsingUpi extends AppCompatActivity {
         phoneno = findViewById(R.id.phoneno);
         button = findViewById(R.id.payusingupibtn);
         button.setOnClickListener(v -> {
-            //todo enter upi id
+
             if(checkfields()) {
                 //if (productprice != null) {
                 int productpriceinteger = Integer.parseInt(productprice);
@@ -70,7 +70,7 @@ public class PaymentUsingUpi extends AppCompatActivity {
                 Log.e("data", productname + " " + amount + " " + name.getText().toString() + " " + address.getText().toString() + " " + phoneno.getText().toString());
              //  handleSSLHandshake();
                // savedetailsindatabase();
-                PayUsingUpi(name.getText().toString().trim(), "ENTER UPI ID ", amount, "payment for pack", "trans id", "ref id");
+                PayUsingUpi(name.getText().toString().trim(), "11165249143@okbizaxis", amount, "payment for pack", "trans id", "ref id");
             }
           //  }
         });

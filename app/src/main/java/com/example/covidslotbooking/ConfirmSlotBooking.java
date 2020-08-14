@@ -54,12 +54,13 @@ public class ConfirmSlotBooking extends AppCompatActivity {
     CheckBox agreedtotnc;
     ArrayList cities_list;
     Button confirmslotbtn;
-    private static final String apiurl = "https://192.168.43.181/phpmyadmin/slotbooking.php";
+    private static final String apiurl = "https://dwaipayanatechnologies.com/TSR/slotbooking.php";
     DatePickerDialog.OnDateSetListener dateSetListener;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm_slot_booking);
+        cities_list = new ArrayList();
         initialise();
         fetchcityfromjson();
         dateofbooking.setOnClickListener(new View.OnClickListener() {

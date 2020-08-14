@@ -37,21 +37,21 @@ TextInputEditText phonenumber;
 TextInputEditText password;
 Button signupnewuser;
 Button loginbtn;
-String url = "https://192.168.43.181/phpmyadmin/login.php?phoneno=";
+String url = "https://dwaipayanatechnologies.com/TSR/login.php?phoneno=";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_login);
         initialise();
        loginbtn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-             //  if(checkfields()){
-               //    handleSSLHandshake();
-                 //  verifydetailsandlogin();
-                   Intent i = new Intent(getApplicationContext(),MainActivity.class);
-                   startActivity(i);
-              // }
+               if(checkfields()){
+                   handleSSLHandshake();
+                   verifydetailsandlogin();
+
+               }
            }
        });
        signupnewuser.setOnClickListener(new View.OnClickListener() {
@@ -100,15 +100,16 @@ String url = "https://192.168.43.181/phpmyadmin/login.php?phoneno=";
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                Log.e("SARTHAK","in response ");
-                if (response.equals("loginsucess")){
-                    Toast.makeText(login.this, response+"SUCCESSFULL", Toast.LENGTH_LONG).show();
+                Log.e("response",response);
+                Log.e("res",response.length()+" /");
+                if (response.trim().equals("loginsucess")){
+                    Toast.makeText(login.this, response, Toast.LENGTH_LONG).show();
                     Intent i = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(i);
                 }
                 else {
-                    Log.e("SARTHAK",response);
-                    Toast.makeText(login.this, response, Toast.LENGTH_LONG).show();
+                    Log.e("else ",response);
+                    Toast.makeText(login.this, "FAILURE ", Toast.LENGTH_LONG).show();
                 }
             }
         }, new Response.ErrorListener() {

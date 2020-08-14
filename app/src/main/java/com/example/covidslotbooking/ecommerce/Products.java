@@ -38,7 +38,7 @@ import javax.net.ssl.X509TrustManager;
 
 public class Products extends AppCompatActivity {
     FloatingActionButton floatingActionButton;
-    String url = "https://192.168.43.181/phpmyadmin/fetchpackdetails.php";
+    String url = "https://dwaipayanatechnologies.com/TSR/fetchpackdetails.php";
     CardView pack1, pack2, pack3;
 
 String productname,productdesc,productprice,productimage;
@@ -63,7 +63,7 @@ String productname,productdesc,productprice,productimage;
         pack1.setOnClickListener(v -> {
             Log.e("SAR","clicked");
 //                help.handleSSLHandshake();
-            fetchpack1details();
+          //  fetchpack1details();
             Intent i = new Intent(getApplicationContext(),ProductDetails.class);
             Bundle bundle = new Bundle();
             bundle.putString("productname",productname);
@@ -123,7 +123,7 @@ pack2.setOnClickListener(v -> {
    //     Log.e("DATA",response);
 
             try {
-                JSONObject jsonArray=new JSONObject(response.substring(9));
+                JSONObject jsonArray=new JSONObject(response.substring(10));
      //           Log.e("a", jsonArray.toString());
                 JSONArray packsArray=jsonArray.getJSONArray("packs");
 //                Log.e("a", ""+packsArray.getJSONObject(0).getString("p_name"));

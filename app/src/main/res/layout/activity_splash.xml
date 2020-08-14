@@ -15,7 +15,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:gravity="center"
         android:text="TSR Heart Care And Diagnostics"
         android:textColor="@color/colorPrimaryDark"
@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="130dp"
         android:src="@drawable/logo" />
 
     <TextView
@@ -38,7 +38,7 @@
     android:layout_below="@id/header_icon"
         android:id="@+id/developedby"
     android:layout_centerVertical="true"
-    android:layout_marginTop="110dp"
+    android:layout_marginTop="70dp"
     android:gravity="bottom"
     android:text=" Developed by"
     android:textAlignment="center"

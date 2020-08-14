@@ -47,8 +47,7 @@
             style="@style/TextAppearance.AppCompat.Body1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="60dp"
             android:gravity="center"
             android:paddingBottom="0dp"
             android:textAlignment="center"
@@ -57,11 +56,11 @@
             app:etv_showLine="true"
             app:etv_textContentColor="@android:color/black"
             app:etv_textContentSize="14sp"
-            app:etv_textExpand="Show more"
-            app:etv_textShrink="Show less"
+            app:etv_textExpand=""
+            app:etv_textShrink=""
             app:etv_textStateColor="@android:color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+            app:layout_constraintStart_toStartOf="@+id/titleTextView"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

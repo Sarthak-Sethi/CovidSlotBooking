@@ -3,6 +3,7 @@ package com.example.covidslotbooking;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -50,7 +51,7 @@ public class Signup extends AppCompatActivity {
     RadioButton male,female,other;
     CheckBox agreedtotnc;
     LottieAnimationView progressbar;
-    private static final String apiurl = "https://192.168.43.181/phpmyadmin/register.php";
+    private static final String apiurl = "https://dwaipayanatechnologies.com/TSR/register.php";
     //="https://files.000webhost.com/"
   //  private static final String apiurl ="D:/android_projects/CovidSlotBooking/phpfiles/register.php";
     ArrayList cities_list;
@@ -70,6 +71,9 @@ public class Signup extends AppCompatActivity {
                     progressbar.setVisibility(View.VISIBLE);
                 handleSSLHandshake();
                     savedataindatabase();
+                    Toast.makeText(getApplicationContext(),"Registered Sucessfully",Toast.LENGTH_LONG).show();
+                    Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(i);
                     progressbar.setVisibility(View.GONE);
                 }
             }

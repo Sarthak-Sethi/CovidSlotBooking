@@ -20,6 +20,7 @@
         <ImageView
             android:id="@+id/product_image_details"
             android:layout_width="match_parent"
+            android:src="@drawable/covidkit1"
             android:layout_height="200dp"
             android:scaleType="centerCrop"/>
 
@@ -41,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="hello "
+            android:text="PACK 1 "
             android:textStyle="bold"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="18sp"
@@ -62,11 +63,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="hello "
+            android:text="Pulse oximeter ,
+ ,Infrared parameter  ,N95 mask , examination gloves "
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="italic"
             android:textSize="18sp"
-            android:gravity="center"
             />
 
         <TextView
@@ -83,7 +84,7 @@
             android:id="@+id/product_price_details"
             android:layout_width="match_parent"
             android:padding="10dp"
-            android:text="hello "
+            android:text="3000 "
             android:textColor="@color/colorPrimaryDark"
             android:layout_height="wrap_content"
             android:textStyle="bold"
